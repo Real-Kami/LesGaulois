@@ -19,8 +19,17 @@ public class Gaulois {
 	}
 
 	private String prendreParole() {
-		// TODO Auto-generated method stub
 		return "Le gaulois " + nom + " : ";
+	}
+
+	@Override
+	public String toString() {
+		return "Gaulois [nom=" + nom + ", force=" + force + "]";
+	}
+
+	public void frapper(Romain romain) {
+		System.out.println(nom + " frappe " + romain.getNom());
+		romain.recevoirCoup(force / 3);
 	}
 
 }

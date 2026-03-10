@@ -5,7 +5,6 @@ public class Romain {
 	private int force;
 
 	public Romain(String nom, int force) {
-		super();
 		this.nom = nom;
 		this.force = force;
 	}
@@ -23,8 +22,12 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
-		// TODO Auto-generated method stub
-		
+		this.force = this.force - forceCoup;
+		if (this.force < 0) {
+			this.parler("J'abandonne");
+		} else {
+			this.parler("Aïe !");
+		}
 	}
 
 }

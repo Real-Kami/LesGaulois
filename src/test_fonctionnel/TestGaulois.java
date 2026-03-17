@@ -36,6 +36,8 @@ public class TestGaulois {
 		 * for (int i = 0; i < 3; i++) { asterix.frapper(brutus); }
 		 */	
 		
+		System.out.println("--- Partie village gaulois ---");
+		
 		Gaulois abra = new Gaulois("Abraracourcix", 6);		
 		Village village_gaulois = new Village("Village des irréductibles", 30, abra);
 		
@@ -66,6 +68,11 @@ public class TestGaulois {
 		dpolem.sePresenter(village_gaulois);
 		
 		//System.out.println(village_gaulois.estVillageois(asterix));
+		
+		System.out.println("--- Partie invariants ---");
+		
+		Romain minus = new Romain("Minus", 6);
+		minus.parler("Bonjour je suis le romain Minus, et je ne suis pas très fort...");
 
 	}
 }

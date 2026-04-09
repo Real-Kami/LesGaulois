@@ -2,7 +2,7 @@ package objets;
 
 public enum Equipement {
 	CASQUE("casque"), BOUCLIER("bouclier");
-	
+
 	private String nom;
 
 	private Equipement(String nom) {
@@ -12,5 +12,6 @@ public enum Equipement {
 	@Override
 	public String toString() {
 		return this.nom;
-	}	
+	}
 }
+

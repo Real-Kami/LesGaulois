@@ -2,11 +2,11 @@ package personnages;
 
 public class Druide {
 	private String nom;
-	//private int force;
+	private int force;
 	
 	public Druide(String nom, int force) {
 		this.nom = nom;
-		//this.force = force;
+		this.force = force;
 	}
 	
 	public String getNom() {
@@ -24,7 +24,7 @@ public class Druide {
 	public void booster(Gaulois gaulois, Chaudron chaudron) {
 		if (chaudron.resterPotion()) {
 			String nomGaulois = gaulois.getNom();
-			if (nomGaulois == "Obélix") {
+			if (nomGaulois.equals("Obélix")) {
 				this.parler("Non " + nomGaulois + " Tu ne peux pas avoir de potion magique.");
 			} else {
 				int forcePotion = chaudron.prendreLouche();

@@ -37,50 +37,50 @@ public class TestGaulois {
 		 * for (int i = 0; i < 3; i++) { asterix.frapper(brutus); }
 		 */
 
-		System.out.println("========== Partie village gaulois ==========");
-
-		Gaulois abra = new Gaulois("Abraracourcix", 6);
-		Village village_gaulois = new Village("Village des irréductibles", 30, abra);
-
-		Gaulois asterix = new Gaulois("Astérix", 8);
-		Gaulois obelix = new Gaulois("Obélix", 25);
-		Gaulois dpolem = new Gaulois("Doublepolémix", 4);
-
-		Gaulois gaulois_inconnu;
-
-		gaulois_inconnu = village_gaulois.trouverVillageois(30);
-
-		village_gaulois.ajouterVillageois(asterix);
-
-		gaulois_inconnu = village_gaulois.trouverVillageois(0);
-		System.out.println(gaulois_inconnu.getNom());
-
-		gaulois_inconnu = village_gaulois.trouverVillageois(1);
-		System.out.println(gaulois_inconnu);
-
-		village_gaulois.ajouterVillageois(obelix);
-
-		village_gaulois.afficherVillage();
-
-		abra.sePresenter(village_gaulois);
-		asterix.sePresenter(village_gaulois);
-		obelix.sePresenter(village_gaulois);
-		dpolem.sePresenter(village_gaulois);
-
-		System.out.println("========== Partie invariants ==========");
-
-		Romain minus = new Romain("Minus", 6);
-		minus.parler("Bonjour je suis le romain Minus, et je ne suis pas très fort...");
-
-		System.out.println("========== Partie équipements ==========");
-
-		Equipement casque = Equipement.CASQUE;
-		Equipement bouclier = Equipement.BOUCLIER;
-
-		minus.sEquiper(casque);
-		minus.sEquiper(casque);
-		minus.sEquiper(bouclier);
-		minus.sEquiper(bouclier);
+//		System.out.println("========== Partie village gaulois ==========");
+//
+//		Gaulois abra = new Gaulois("Abraracourcix", 6);
+//		Village village_gaulois = new Village("Village des irréductibles", 30, abra);
+//
+//		Gaulois asterix = new Gaulois("Astérix", 8);
+//		Gaulois obelix = new Gaulois("Obélix", 25);
+//		Gaulois dpolem = new Gaulois("Doublepolémix", 4);
+//
+//		Gaulois gaulois_inconnu;
+//
+//		gaulois_inconnu = village_gaulois.trouverVillageois(30);
+//
+//		village_gaulois.ajouterVillageois(asterix);
+//
+//		gaulois_inconnu = village_gaulois.trouverVillageois(0);
+//		System.out.println(gaulois_inconnu.getNom());
+//
+//		gaulois_inconnu = village_gaulois.trouverVillageois(1);
+//		System.out.println(gaulois_inconnu);
+//
+//		village_gaulois.ajouterVillageois(obelix);
+//
+//		village_gaulois.afficherVillage();
+//
+//		abra.sePresenter(village_gaulois);
+//		asterix.sePresenter(village_gaulois);
+//		obelix.sePresenter(village_gaulois);
+//		dpolem.sePresenter(village_gaulois);
+//
+//		System.out.println("========== Partie invariants ==========");
+//
+//		Romain minus = new Romain("Minus", 6);
+//		minus.parler("Bonjour je suis le romain Minus, et je ne suis pas très fort...");
+//
+//		System.out.println("========== Partie équipements ==========");
+//
+//		Equipement casque = Equipement.CASQUE;
+//		Equipement bouclier = Equipement.BOUCLIER;
+//
+//		minus.sEquiper(casque);
+//		minus.sEquiper(casque);
+//		minus.sEquiper(bouclier);
+//		minus.sEquiper(bouclier);
 
 	}
 }

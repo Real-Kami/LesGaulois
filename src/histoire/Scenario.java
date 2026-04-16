@@ -4,13 +4,20 @@ import personnages.Gaulois;
 import personnages.Romain;
 import personnages.Druide;
 import personnages.Chaudron;
+import village_gaulois.Musee;
+
+import java.util.Iterator;
+
 import objets.Equipement;
 
 //import village_gaulois.Musee;
 
 public class Scenario {
-
+	
 	public static void main(String[] args) {
+		
+		// partie bataille des gaulois
+		
 		Chaudron chaudron = new Chaudron(0, 0);
 		Druide druide = new Druide("Panoramix", 5);
 		druide.parler("Je vais aller préparer une petite potion...");
@@ -27,24 +34,32 @@ public class Scenario {
 		minus.sEquiper(Equipement.CASQUE);
 		milexcus.sEquiper(Equipement.CASQUE);
 		minus.parler("UN GAU... UN GAUGAU...");
-		int force_avant_coup = minus.getForce();
-		asterix.frapper(minus);
+
+		for (int i = 0; i < 2; i++) {
+			int force_avant_coup = minus.getForce();
+			asterix.frapper(minus);
+
+			if (force_avant_coup == minus.getForce()) {
+				minus.parler("Alors " + asterix.getNom() + " on fait moins le malin face à mon équipement!");
+				obelix.parler("Tu veux un peu d'aide " + asterix.getNom() + " ?");
+				obelix.frapper(minus);
+			}
+		}
+
+		// Partie musée des trophées
 		
-		// MINUS EST PAS CENSE ABANDONNER CAR EQUIPEMENT.
+		Musee musee = new Musee();
 		
-//		if (force_avant_coup == minus.getForce()) {
-//			minus.parler("Alors " + asterix.getNom() + " on fait moins le malin face à mon équipement!");
-//		}
+		milexcus.parler("UN GAU... UN GAUGAU...");
+		do {
+			obelix.frapper(milexcus);
+		} while (milexcus.getForce() > 0);
 
-//		PARTIE 5 : a decommenter
-//		milexcus.parler("UN GAU... UN GAUGAU...");
-//		do {
-//			obelix.frapper(milexcus);
-//		} while (milexcus.getForce() > 0);
+		
+		obelix.faireUneDonnation(musee);
 
-//		Musee musee = new Musee();
-//		obelix.faireUneDonnation(musee);
-
+		System.out.println(musee.extraireVersOCaml());
+		
 	}
 
 }

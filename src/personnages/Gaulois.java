@@ -2,11 +2,12 @@ package personnages;
 
 import village_gaulois.Village;
 import objets.Equipement;
+import village_gaulois.Musee;
 
 public class Gaulois {
 	private String nom;
 	// private int force;
-	private int effetPotion;
+	private int effetPotion = 1;
 	private int force;
 	private int nbTrophees;
 	private Equipement[] trophees = new Equipement[100];
@@ -49,7 +50,7 @@ public class Gaulois {
 	// code importé depuis le sujet
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		Equipement[] tropheesLoc = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] tropheesLoc = romain.recevoirCoup((this.force / 2) * effetPotion);
 		effetPotion--;
 		if (effetPotion < 1) {
 			effetPotion = 1;
@@ -78,4 +79,13 @@ public class Gaulois {
 		}
 	}
 
+	public void faireUneDonnation(Musee musee) {
+		parler("Je donne tous mes trophées au musée !");
+		while (this.nbTrophees > 0) {
+			musee.donnerTrophee(this, this.trophees[this.nbTrophees-1]);
+			parler("Je donne " + this.trophees[this.nbTrophees-1] + " au musée.");
+			this.nbTrophees -= 1;
+		}
+	}
+	
 }
